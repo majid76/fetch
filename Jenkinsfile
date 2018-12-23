@@ -8,16 +8,6 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
-            }
-        }
-    }
-}
-
-pipeline {
-    agent any
-    stages {
-        stage('Deploy') {
-            steps {
                 retry(3) {
                     sh './flakey-deploy.sh'
                 }
