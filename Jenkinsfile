@@ -3,13 +3,12 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'echo "Fail!"; exit 1'
                 sh 'echo "Hello there"'
                 sh '''
                     ls -ltrah
                     pwd
                     whoami
-                    netstat            
+                    netstat
                 '''
 
             }
