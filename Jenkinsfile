@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'cd jenkinsfetch'
-                sh './gradlew check'
+                sh 'pwd'
+
             }
         }
     }
