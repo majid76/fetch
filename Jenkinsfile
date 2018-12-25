@@ -1,8 +1,15 @@
-node {
-    withEnv(['DISABLE_AUTH=true',
-             'DB_ENGINE=sqlite']) {
-        stage('Build') {
-            sh 'printenv'
+pipeline {
+    agent any
+    stages {
+        stage('Test') {
+            steps {
+                sh './gradlew check'
+            }
+        }
+    }
+    post {
+        always {
+            junit 'build/reports/**/*.xml'
         }
     }
 }
